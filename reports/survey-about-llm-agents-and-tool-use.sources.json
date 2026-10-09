@@ -1,0 +1,122 @@
+[
+  {
+    "n": 1,
+    "id": "2210.03629",
+    "url": "https://arxiv.org/abs/2210.03629",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "date": "2023-03-10",
+    "source": "arxiv"
+  },
+  {
+    "n": 2,
+    "id": "2302.04761",
+    "url": "https://arxiv.org/abs/2302.04761",
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "date": "2023-02-09",
+    "source": "arxiv"
+  },
+  {
+    "n": 3,
+    "id": "2305.15334",
+    "url": "https://arxiv.org/abs/2305.15334",
+    "title": "Gorilla: Large Language Model Connected with Massive APIs",
+    "date": "2023-05-24",
+    "source": "arxiv"
+  },
+  {
+    "n": 4,
+    "id": "2402.01680",
+    "url": "https://arxiv.org/abs/2402.01680",
+    "title": "Large Language Model based Multi-Agents: A Survey of Progress and Challenges",
+    "date": "",
+    "source": "arxiv"
+  },
+  {
+    "n": 5,
+    "id": "2504.01963",
+    "url": "https://arxiv.org/abs/2504.01963",
+    "title": "LLMs Working in Harmony: A Survey on the Technological Aspects of Building Effective LLM-Based Multi Agent Systems",
+    "date": "2025-03-13",
+    "source": "arxiv"
+  },
+  {
+    "n": 6,
+    "id": "https://dl.acm.org/doi/full/10.1145/3745238.3745531",
+    "url": "https://dl.acm.org/doi/full/10.1145/3745238.3745531",
+    "title": "A Survey of Multi-AI Agent Collaboration: Theories, Key Technologies, Application Scenarios, and Future Directions",
+    "date": "2025-07-31",
+    "source": "web"
+  },
+  {
+    "n": 7,
+    "id": "https://proceedings.iclr.cc/paper_files/paper/2025/file/5750f91d8fb9d5c02bd8ad2c3b44456b-Paper-Conference.pdf",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/5750f91d8fb9d5c02bd8ad2c3b44456b-Paper-Conference.pdf",
+    "title": "Agent Security Bench (ASB): Evaluating the Security of LLM-Based Agents",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 8,
+    "id": "https://arxiv.org/html/2504.19793v3",
+    "url": "https://arxiv.org/html/2504.19793v3",
+    "title": "ToolHijacker: Prompt Injection Attack to Tool Selection in LLM Agents",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 9,
+    "id": "https://github.com/ppradyoth/AgentInjectionBench",
+    "url": "https://github.com/ppradyoth/AgentInjectionBench",
+    "title": "AgentInjectionBench: A benchmark for evaluating prompt injection attacks in agentic tool-use pipelines",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 10,
+    "id": "https://arxiv.org/html/2605.26269",
+    "url": "https://arxiv.org/html/2605.26269",
+    "title": "AgentSecBench: Measuring Prompt Injection, Privacy Leakage, and Tool-Use Integrity in LLM Agents",
+    "date": "2026-05-25",
+    "source": "web"
+  },
+  {
+    "n": 11,
+    "id": "10.1007/s41019-025-00296-9",
+    "url": "https://link.springer.com/article/10.1007/s41019-025-00296-9",
+    "title": "LLM-Based Agents for Tool Learning: A Survey",
+    "date": "2025-06-26",
+    "source": "web"
+  },
+  {
+    "n": 12,
+    "id": "https://link.springer.com/article/10.1007/s12559-026-10619-1",
+    "url": "https://link.springer.com/article/10.1007/s12559-026-10619-1",
+    "title": "From Language Models to Agentic AI: A Survey of Autonomous, Action-Enabled, and Collaborative LLM Agents",
+    "date": "2026-08-24",
+    "source": "web"
+  },
+  {
+    "n": 13,
+    "id": "2501.06322",
+    "url": "https://arxiv.org/abs/2501.06322",
+    "title": "Multi-Agent Collaboration Mechanisms: A Survey of LLMs",
+    "date": "",
+    "source": "arxiv"
+  },
+  {
+    "n": 14,
+    "id": "2308.03688",
+    "url": "https://arxiv.org/abs/2308.03688",
+    "title": "AGENTBENCH: EVALUATING LLMS AS AGENTS",
+    "date": "2025-10-04",
+    "source": "arxiv"
+  },
+  {
+    "n": 15,
+    "id": "2602.20867",
+    "url": "https://huggingface.co/papers/2602.20867",
+    "title": "SoK: Agentic Skills -- Beyond Tool Use in LLM Agents",
+    "date": "2026-02-24",
+    "source": "hf-search"
+  }
+]

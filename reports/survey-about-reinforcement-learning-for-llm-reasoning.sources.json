@@ -1,0 +1,90 @@
+[
+  {
+    "n": 1,
+    "id": "3834858",
+    "url": "https://dl.acm.org/doi/full/10.1145/3834858",
+    "title": "A Technical Survey of Reinforcement Learning Techniques for Large Language Models",
+    "date": "2026-09-29",
+    "source": "web"
+  },
+  {
+    "n": 2,
+    "id": "2501.12948",
+    "url": "https://arxiv.org/abs/2501.12948",
+    "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+    "date": "2025-01-22",
+    "source": "arxiv"
+  },
+  {
+    "n": 3,
+    "id": "2501.09686",
+    "url": "https://huggingface.co/papers/2501.09686",
+    "title": "Towards Large Reasoning Models: A Survey of Reinforced Reasoning with Large Language Models",
+    "date": "2025-01-23",
+    "source": "hf-daily"
+  },
+  {
+    "n": 4,
+    "id": "2510.08049",
+    "url": "https://arxiv.org/abs/2510.08049",
+    "title": "A Survey of Process Reward Models: From Outcome Signals to Process Supervisions for Large Language Models",
+    "date": "",
+    "source": "arxiv"
+  },
+  {
+    "n": 5,
+    "id": "2502.06813",
+    "url": "https://arxiv.org/abs/2502.06813",
+    "title": "Policy Guided Tree Search for Enhanced LLM Reasoning",
+    "date": "2025-02-04",
+    "source": "arxiv"
+  },
+  {
+    "n": 6,
+    "id": "2604.13602",
+    "url": "https://arxiv.org/abs/2604.13602",
+    "title": "Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges",
+    "date": "",
+    "source": "arxiv"
+  },
+  {
+    "n": 7,
+    "id": "2502.12118",
+    "url": "https://arxiv.org/abs/2502.12118",
+    "title": "Scaling Test-Time Compute Without Verification or RL is Suboptimal",
+    "date": "",
+    "source": "arxiv"
+  },
+  {
+    "n": 8,
+    "id": "rlvr-generalizability",
+    "url": "https://github.com/uiuc-kang-lab/rlvr-generalizability",
+    "title": "Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?",
+    "date": "2026-03-23",
+    "source": "web"
+  },
+  {
+    "n": 9,
+    "id": "537d5aa768c2d534016a4d06f87bc8fb",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/537d5aa768c2d534016a4d06f87bc8fb-Paper-Conference.pdf",
+    "title": "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 10,
+    "id": "2203.14465",
+    "url": "https://arxiv.org/abs/2203.14465",
+    "title": "STaR: Self-Taught Reasoner Bootstrapping Reasoning With Reasoning",
+    "date": "",
+    "source": "arxiv"
+  },
+  {
+    "n": 11,
+    "id": "2610.06861",
+    "url": "https://arxiv.org/abs/2610.06861",
+    "title": "When Does External Guidance Help LLM Reasoning? A Bias-Variance Theory of Guidance-Augmented GRPO",
+    "date": "2026-07-08",
+    "source": "arxiv"
+  }
+]

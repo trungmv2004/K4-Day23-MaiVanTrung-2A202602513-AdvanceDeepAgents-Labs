@@ -107,3 +107,110 @@ Kết quả nằm ở `reports/survey-about-world-model.md` cùng `.sources.json
 - Mỗi lần chạy tốn token LLM và thời gian sandbox. `tokens` trong `meta.json` chỉ đếm tin nhắn của lead, chưa gồm subagent, nên chi phí thật cao hơn. `open_sandbox()` luôn dừng và xóa sandbox khi kết thúc, kể cả khi lỗi. Đừng bỏ qua nó.
 - **Không đưa bí mật vào sandbox.** Sandbox không ngăn được prompt injection hay việc đẩy dữ liệu ra mạng; một trang web độc hại có thể khiến agent chạy lệnh bên trong sandbox. Vì vậy mọi công cụ gọi mạng và mọi khóa ở lại phía host.
 - Nội dung lấy từ web là **dữ liệu không đáng tin**: agent không được làm theo chỉ dẫn nằm trong đó.
+
+## 8. Chạy bản triển khai trên Windows với Docker
+
+Mở Docker Desktop ở chế độ Linux containers. Trong PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+# Chỉ sao chép khi chưa có .env để giữ cấu hình hiện tại.
+if (-not (Test-Path .env)) { Copy-Item .env.example .env }
+```
+
+Điền `LAB_MODEL` và khóa của nhà cung cấp vào `.env`, đặt `SANDBOX=docker`.
+Với endpoint tương thích OpenAI, điền thêm `LAB_BASE_URL` và `LAB_API_KEY`.
+`EXA_API_KEY` được khuyến nghị để giảm giới hạn tốc độ. Khóa ở host;
+container chạy không có mạng. Không đưa `.env` vào Git.
+Nếu Exa báo hết hạn mức MCP miễn phí và yêu cầu chờ hơn một giờ,
+công cụ trả lỗi ngay kèm thời gian chờ; cấu hình `EXA_API_KEY` hoặc chờ hạn mức phục hồi.
+
+```powershell
+# Kiểm thử offline, không gọi LLM hoặc tạo sandbox.
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+# Thử cả năm công cụ nguồn dữ liệu qua mạng.
+.\.venv\Scripts\python.exe tools.py
+# Chạy một chủ đề.
+.\.venv\Scripts\python.exe research.py "survey about world model"
+# Chạy lần lượt năm chủ đề; dừng khi có lần chạy lỗi.
+$topics = Get-Content topics.md | Where-Object { $_ -match '^\d+\. ' }
+foreach ($line in $topics) {
+    $topic = $line -replace '^\d+\. ', ''
+    .\.venv\Scripts\python.exe research.py $topic
+    if ($LASTEXITCODE -ne 0) { throw "Research failed: $topic" }
+}
+.\.venv\Scripts\python.exe self_check.py
+```
+
+Mỗi chủ đề tạo ba tệp trong `reports/`: `.md` là báo cáo, `.sources.json`
+là danh sách nguồn đánh số, `.meta.json` là thống kê lần chạy. Thống kê token
+bao gồm collector và lead, chưa gồm subagent. Báo cáo và danh sách nguồn giữ nguyên byte tải từ sandbox.
+Lần chạy thiếu nguồn, sai trích dẫn hoặc không đủ ba họ nguồn sẽ báo lỗi;
+kiểm tra nội dung trước khi lưu và khôi phục bộ tệp cũ nếu ghi tệp thất bại.
+
+Quy trình có hai giai đoạn trong cùng sandbox: collector chỉ giao nghiên cứu
+cho researcher, kiểm tra đủ ba task và ba ghi chú, rồi chuyển lịch sử thật
+cho lead viết và kiểm chứng báo cáo.
+Nếu researcher trả đầy đủ ghi chú nhưng bỏ qua lời gọi ghi tệp, middleware của
+researcher lưu nguyên văn câu trả lời vào đường dẫn ghi chú đã được giao;
+không dùng câu trả lời chỉ có đường dẫn hoặc tóm tắt thay cho bằng chứng.
+Collector có giới hạn 30/80 lần gọi mô hình/công cụ; lead có giới hạn 150/300 và 1000 bước graph;
+API Python `main(..., lead_model=...)` cho phép dùng model riêng cho điều phối và tổng hợp;
+subagent vẫn dùng model cấu hình ban đầu, dùng chung bộ giới hạn tốc độ.
+Nếu chọn cách này, metadata ghi rõ từng model trong `models`.
+Trạng thái graph được giữ sau mỗi bước. Nếu model lead riêng hết quota ngày hoặc
+API trả lỗi server tạm thời (500/502/503/504),
+quy trình tiếp tục bằng model của subagent trong cùng sandbox và ghi model
+dự phòng vào metadata; không bỏ qua kiểm tra hay làm lại các task đã hoàn tất.
+Quota ngày của chính model subagent vẫn khiến lần chạy thất bại.
+researcher có giới hạn 40/60, citation-checker 20/30. Helper `general-purpose`
+mặc định của thư viện cũng được ghi đè để có giới hạn 20/30. Cấu hình theo tài liệu
+[subagents](https://docs.langchain.com/oss/python/deepagents/subagents) và
+[middleware giới hạn lời gọi](https://docs.langchain.com/oss/python/langchain/middleware/built-in).
+Các tệp được cung cấp (`model.py`, `sandbox.py`, `self_check.py`,
+`finalize_citations.py`) được giữ nguyên.
+
+Gemini được giới hạn mặc định khoảng một lời gọi mô hình mỗi 10 giây ở host,
+dùng chung cho lead và subagent, để giảm đỉnh token/phút khi chạy song song.
+Có thể điều chỉnh bằng `LAB_MODEL_RPS` trong `.env` (0 để tắt). Giới hạn này
+đếm lời gọi, không đếm token; quota của tài khoản vẫn có thể làm lần chạy lỗi.
+Gemini có timeout phản hồi 120 giây (đổi bằng `LAB_MODEL_TIMEOUT`, phải dương)
+và tối đa ba lần thử của SDK để kết nối bị treo không chờ vô hạn.
+Middleware của lead và subagent thử lại lỗi kết nối HTTP tối đa hai lần thêm,
+với backoff và jitter; hết retry thì lần chạy thất bại và dọn sandbox.
+Nếu lỗi nêu rõ quota theo phút, middleware chờ 60 giây trước mỗi lần thử lại
+(tối đa hai lần); quota ngày hoặc tài khoản sẽ báo thất bại ngay.
+Host tải lại script hoàn thiện/kiểm tra trích dẫn sau khi agent kết thúc để
+agent không thể thay validator bằng mã tự sinh.
+Sau khi finalizer đánh số, host gửi báo cáo và bảng số–URL thực tế cho lead,
+yêu cầu thêm một task citation-checker kiểm tra 3–5 khẳng định theo chính bảng này.
+Lead sửa các liên kết khẳng định–nguồn trong sandbox trước khi host kiểm tra lại và tải tệp.
+
+`prepare_sources.py` chạy trong sandbox trước finalizer, suy ra ID bài báo
+từ URL arXiv/Hugging Face và chuẩn hóa URL bài báo. Script giữ nhãn nguồn,
+từ chối nhãn không khớp miền và chuẩn hóa chữ hoa/thường của các tiêu đề bắt buộc,
+đổi ngày chưa biết (`null` hoặc thiếu trường) thành chuỗi rỗng,
+giữ nguyên khẳng định và số trích dẫn. Nếu đầu ra chưa
+đạt kiểm tra, host gửi lỗi cho lead sửa trong cùng sandbox, tối đa ba lượt;
+chỉ lưu bộ tệp khi toàn bộ kiểm tra đã qua.
+
+Host cũng kiểm tra các tiêu đề bắt buộc và đủ 3-6 phần chủ đề, yêu cầu
+ít nhất ba task `researcher` (không tính checker thay researcher)
+và ba tệp ghi chú không rỗng trong sandbox. `subagent_types` trong metadata
+cho biết số lượt giao việc theo vai trò.
+Khi thêm nguồn,
+agent giữ số của URL hiện có cho đến khi finalizer chạy; `prepare_sources.py`
+từ chối số nguồn trùng để tránh gán nhầm khẳng định sang bài khác.
+Để hệ thống tự kiểm chứng và sửa một báo cáo đã sinh (không sửa tay):
+
+```powershell
+.\.venv\Scripts\python.exe research.py --repair "survey about world model"
+```
+
+Chế độ này đưa bản hiện có vào sandbox mới, giao ít nhất ba researcher lấy lại
+bằng chứng theo URL bằng `web_fetch`, viết ghi chú mới, rồi sửa cấu trúc và liên kết khẳng định
+với nguồn. Bộ tệp cũ được giữ cho đến khi bản thay thế vượt toàn bộ kiểm tra.
+API Python có thể dùng `verification_urls=[...]` cùng `repair_existing=True` để sửa hẹp
+một báo cáo đã sinh: chọn ít nhất ba URL đang có, vẫn giao ba researcher, gửi yêu cầu
+kiểm chứng cho cả collector và lead, và giữ các đoạn đã có bằng chứng.

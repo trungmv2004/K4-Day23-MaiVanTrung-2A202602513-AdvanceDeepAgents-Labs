@@ -1,0 +1,106 @@
+[
+  {
+    "n": 1,
+    "id": "2510.04999",
+    "url": "https://huggingface.co/papers/2510.04999",
+    "title": "Bridging Text and Video Generation: A Survey",
+    "date": "2025-10-06",
+    "source": "hf-search"
+  },
+  {
+    "n": 2,
+    "id": "2410.08184",
+    "url": "https://arxiv.org/abs/2410.08184",
+    "title": "Scaling Laws for Diffusion Transformers",
+    "date": "",
+    "source": "arxiv"
+  },
+  {
+    "n": 3,
+    "id": "2607.28611",
+    "url": "https://arxiv.org/abs/2607.28611",
+    "title": "Chimera: Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers",
+    "date": "2026-07-30",
+    "source": "arxiv"
+  },
+  {
+    "n": 4,
+    "id": "https://link.springer.com/chapter/10.1007/978-3-032-37574-2_8",
+    "url": "https://link.springer.com/chapter/10.1007/978-3-032-37574-2_8",
+    "title": "Taming Text-to-Sounding Video Generation via Advanced Modality Condition and Interaction",
+    "date": "2026-09-13",
+    "source": "web"
+  },
+  {
+    "n": 5,
+    "id": "2506.19774",
+    "url": "https://huggingface.co/papers/2506.19774",
+    "title": "Kling-Foley: Multimodal Diffusion Transformer for High-Quality Video-to-Audio Generation",
+    "date": "2025-06-24",
+    "source": "hf-search"
+  },
+  {
+    "n": 6,
+    "id": "2508.16930",
+    "url": "https://huggingface.co/papers/2508.16930",
+    "title": "HunyuanVideo-Foley: Multimodal Diffusion with Representation Alignment for High-Fidelity Foley Audio Generation",
+    "date": "",
+    "source": "hf-search"
+  },
+  {
+    "n": 7,
+    "id": "https://proceedings.mlr.press/v202/yan23b/yan23b.pdf",
+    "url": "https://proceedings.mlr.press/v202/yan23b/yan23b.pdf",
+    "title": "Temporally Consistent Transformers for Video Generation",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 8,
+    "id": "2408.06072",
+    "url": "https://huggingface.co/papers/2408.06072",
+    "title": "CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer",
+    "date": "2024-08-12",
+    "source": "hf-search"
+  },
+  {
+    "n": 9,
+    "id": "2509.06120",
+    "url": "https://arxiv.org/abs/2509.06120",
+    "title": "If generative AI is the answer, what is the question?",
+    "date": "2025-09-07",
+    "source": "arxiv"
+  },
+  {
+    "n": 10,
+    "id": "2504.16081",
+    "url": "https://arxiv.org/abs/2504.16081",
+    "title": "Survey of Video Diffusion Models: Foundations, Implementations, and Applications",
+    "date": "",
+    "source": "arxiv"
+  },
+  {
+    "n": 11,
+    "id": "2405.19334",
+    "url": "https://arxiv.org/abs/2405.19334",
+    "title": "LLMs Meet Multimodal Generation and Editing: A Survey",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 12,
+    "id": "2604.15911",
+    "url": "https://arxiv.org/abs/2604.15911",
+    "title": "Efficient Video Diffusion Models: Advancements and Challenges",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 13,
+    "id": "2502.17863",
+    "url": "https://arxiv.org/abs/2502.17863",
+    "title": "A Survey: Spatiotemporal Consistency in Video Generation",
+    "date": "",
+    "source": "web"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "topic": "survey about world model",
+  "model": "google_genai:gemini-3-flash-preview",
+  "elapsed_s": 358.3,
+  "subagent_calls": 5,
+  "subagent_types": {
+    "researcher": 3,
+    "citation-checker": 2
+  },
+  "tool_calls": {
+    "write_todos": 7,
+    "task": 5,
+    "ls": 1,
+    "read_file": 6,
+    "write_file": 2,
+    "execute": 4
+  },
+  "tokens": {
+    "input": 414694,
+    "output": 13728
+  },
+  "n_sources": 10,
+  "source_families": [
+    "arxiv",
+    "hf-daily",
+    "web"
+  ],
+  "models": {
+    "collector": "google_genai:gemini-3-flash-preview",
+    "lead": [
+      "google_genai:gemini-3-flash-preview",
+      "google_genai:gemini-3.5-flash-lite"
+    ],
+    "subagents": "google_genai:gemini-3.5-flash-lite"
+  }
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "n": 1,
+    "id": "2606.22189",
+    "url": "https://arxiv.org/pdf/2606.22189.pdf",
+    "title": "L20-Edu-135M: An Auditable Single-GPU Study of Data-Efficient Small Language Modeling",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 2,
+    "id": "2608.26973",
+    "url": "https://arxiv.org/html/2608.26973",
+    "title": "Squeezing More from Limited Data with Recursive Transformers",
+    "date": "2026-08-27",
+    "source": "web"
+  },
+  {
+    "n": 3,
+    "id": "2506.10205",
+    "url": "https://huggingface.co/papers/2506.10205",
+    "title": "AWP: Activation-Aware Weight Pruning and Quantization with Projected Gradient Descent",
+    "date": "2025-06-11",
+    "source": "hf-search"
+  },
+  {
+    "n": 4,
+    "id": "2509.11177",
+    "url": "https://huggingface.co/papers/2509.11177",
+    "title": "Optimal Brain Restoration for Joint Quantization and Sparsification of LLMs",
+    "date": "2025-09-14",
+    "source": "hf-search"
+  },
+  {
+    "n": 5,
+    "id": "https://ojs.aaai.org/index.php/AAAI/article/view/41467/45428",
+    "url": "https://ojs.aaai.org/index.php/AAAI/article/view/41467/45428",
+    "title": "Building Domain-Specific Small Language Models via Guided Data Generation",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 6,
+    "id": "2402.01093v2",
+    "url": "https://arxiv.org/html/2402.01093v2",
+    "title": "Need a Small Specialized Language Model? Plan Early!",
+    "date": "2024-10-31",
+    "source": "web"
+  },
+  {
+    "n": 7,
+    "id": "2503.12167",
+    "url": "https://arxiv.org/abs/2503.12167",
+    "title": "PLM: Efficient Peripheral Language Models Hardware-Co-Designed for Ubiquitous Computing",
+    "date": "2025-03-15",
+    "source": "arxiv"
+  },
+  {
+    "n": 8,
+    "id": "https://dl.acm.org/doi/pdf/10.1145/3816440.3818524",
+    "url": "https://dl.acm.org/doi/pdf/10.1145/3816440.3818524",
+    "title": "QMC: Efficient SLM Edge Inference via Outlier-Aware Quantization and Emergent Memories Co-Design",
+    "date": "2026-08-05",
+    "source": "web"
+  },
+  {
+    "n": 9,
+    "id": "https://par.nsf.gov/servlets/purl/10653860",
+    "url": "https://par.nsf.gov/servlets/purl/10653860",
+    "title": "Tiny Models, Tough Limits Benchmarking and Optimizing Small Language Models for Edge Deployment",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 10,
+    "id": "https://aclanthology.org/anthology-files/anthology-files/pdf/acl/2025.acl-long.718.pdf",
+    "url": "https://aclanthology.org/anthology-files/anthology-files/pdf/acl/2025.acl-long.718.pdf",
+    "title": "Demystifying Small Language Models for Edge Deployment",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 11,
+    "id": "https://aclanthology.org/2025.emnlp-main.1198.pdf",
+    "url": "https://aclanthology.org/2025.emnlp-main.1198.pdf",
+    "title": "SLlama: Parameter-Efficient Language Model Architecture for Enhanced Linguistic Competence Under Strict Data Constraints",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 12,
+    "id": "2607.04244",
+    "url": "https://huggingface.co/papers/2607.04244",
+    "title": "Quantize the Target, Quantize the Drafter: Efficient Inference with Qwen3.5-4B",
+    "date": "",
+    "source": "hf-search"
+  }
+]
